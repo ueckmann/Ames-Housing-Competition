@@ -1,183 +1,54 @@
-# Project 2 - Ames Housing Data and Kaggle Challenge
+# Project 2 - Predicting Remodeled House Prices for Ames, Iowa
+By Uriel Eckmann
 
-Welcome to Project 2! It's time to start modeling.
+![House_Renovating](photos/house_reno.jpeg)
 
-**Primary Learning Objectives:**
-1. Creating and iteratively refining a regression model
-2. Using [Kaggle](https://www.kaggle.com/) to practice the modeling process
-3. Providing business insights through reporting and presentation.
+## Problem Statement
 
-You are tasked with creating a regression model based on the Ames Housing Dataset. This model will predict the price of a house at sale.
+The year is 2010. The stock market is beginning to recover, but the housing market has completely collapsed. No one is buying houses, and thousands of contractors are scrambling to find work. Luckily for them, Google has annouced that they will be opening their new headquarters right outside Ames, Iowa, so that they could literally be in the heart of the country. This has led to a large influx of people moving to the area hoping to capitalize. Ames has it's fair share of houses that need to be remodeled, or expanded, and it's a golden opportunity for contractors to flip houses quickly and for large profits. The issue is, where should they buy? What should they focus on when renovating these homes? These contractors are all new to the area, and they need help.
 
-The Ames Housing Dataset is an exceptionally detailed and robust dataset with over 70 columns of different features relating to houses.
+## Executive Summary
 
-Secondly, we are hosting a competition on Kaggle to give you the opportunity to practice the following skills:
+Our goal here at Data Homes LLC, is to predict what features of houses make them the most desirable, and to predict what refurbished homes will sell for, so contractors can decide which changes will be the most profitable. 
+### _Workflow_
+#### _Data Cleaning_
+We here at Data Homes LLC have collected data from the Ames Assessor's office concerning homes sold from 2006 to 2010. We cleaned that data for our usage, and organized many of the different features of the houses into ordinal rankings in order to interpret them better. The assessors office scaled many of their different household characteristics in ways that were not condusive for our data - so we reinterpreted them to make them more useful for our models. There were also several empty entries that had to be considered, and filled in in the most ideal form for each feature. However, it should be noted that due to the assessors format of filling out features that were missing from homes, much time was devoted to differentiating missing values and missing features. 
+#### _Data Exploration_
+In the course of going through the data, we discovered the best neighborhoods to build in, what to look for in the surrounding area, which type of houses sell for higher prices, what key features the houses need, and which ones are just unnecessary. 
+#### _Observations_
+After building several models from our data to predict the house prices, we have determined some rather striking information about what will make the house worth more or less. For example, imitation stucco - very bad idea.
 
-- Refining models over time
-- Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
-- The use of Kaggle as a place to practice data science
+#### _Issues_
+We will admit, our models are not perfect. But, if you sign up with us, we can give you much more information than you have now, and every day our models keep improving as we collect more data. It's already great and it's only going to get better, so sign on as client before it's too late!
 
-As always, you will be submitting a technical report and a presentation. **You may find that the best model for Kaggle is not the best model to address your data science problem.**
+## Conclusions
 
-## Set-up
+The housing market is in difficult times. With the market crash, it really has become a buyers market. Which means that flipping houses now could be more lucrative than ever - buy low, sell high. As the market bounces back, people are going to want better houses, and what those houses need in order to sell at high prices can sometimes not be worth it, or beyond your control. It's important to note that certain neighborhoods could get the short end of the stick in this deal. With lower ranges of prices, it won't be worth it for contractors to flip houses in those neighborhoods as they won't get as good of a return as they would in other neighborhoods. This could potentially lead to further economic disparities between the neighborhoods, which is an important ethical dillema. Simultaneously, some of the coefficients in our model were quite confusing and seemingly counter to what we would have thought, such as central air having a negative coefficient. It leads me to believe that more data is needed and that more models need to be constructed.
 
-Before you begin working on this project, please do the following:
+## Recommendations
 
-1. Sign up for an account on [Kaggle](https://www.kaggle.com/)
-2. **IMPORTANT**: Click this link ([Regression Challenge Sign Up](https://www.kaggle.com/t/7ef1036844e142cd9edbb6b708633a12)) to **join** the competition (otherwise you will not be able to make submissions!)
-3. Review the material on the [DSI-US-12 Regression Challenge](https://www.kaggle.com/c/dsi-us-12-project-2-regression-challenge)
-4. Review the [data description](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt).
+Based on our model, if you want to know what to build and where to build here are some important tips:
+1. Every additional square foot above ground in the house increases the house's value by \$48.
+1. If you build an entirely new home, that will raise the price by \$17,000
+1. Increasing the overall quality of the home by just 1 point raises the house price by nearly \$7,500
+1. Increasing the overall condition of the home by just 1 point raises the house price by nearly \$5,000
+1. Building a house on a hillside increases the value by \$11,000
+1. Building near a positive neighborhood feature can increase the value by as much as \$13,000
+1. Roofs: These slight changes can swing the value of the house by tens of thousands of dollars.
+    - Don't build Mansard or shed styles
+    - Use wooden shingles
+1. If you are building a new house, be sure to use a slab, not poured concrete.
 
-## The Modeling Process
+__There are so many features to consider, I recommend you hire our services right away so you can learn about them all, so you can save money and sell for more!!!!!__
 
-1. The train dataset has all of the columns that you will need to generate and refine your models. The test dataset has all of those columns except for the target that you are trying to predict in your Regression model.
-2. Generate your regression model using the training data. We expect that within this process, you'll be making use of:
-    - train-test split
-    - cross-validation / grid searching for hyperparameters
-    - strong exploratory data analysis to question correlation and relationship across predictive variables
-    - code that reproducibly and consistently applies feature transformation (such as the preprocessing library)
-3. Predict the values for your target column in the test dataset and submit your predictions to Kaggle to see how your model does against unknown data.
-    - **Note**: Kaggle expects to see your submissions in a specific format. Check the challenge's page to make sure you are formatting your CSVs correctly!
-    - **You are limited to models you've learned in class**. In other words, you cannot use XGBoost, Neural Networks or any other advanced model for this project.
-4. Evaluate your models!
-    - consider your evaluation metrics
-    - consider your baseline score
-    - how can your model be used for inference?
-    - why do you believe your model will generalize to new data?
+## References
 
-## Submission
+1. Our [Data Dictionary](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt)
+1. The [Kaggle](https://www.kaggle.com/c/dsi-us-12-project-2-regression-challenge?rvi=1) Competition.
 
-Materials must be submitted by the beginning of class on **Friday, July 10**.
-
-The last day for the Kaggle competition will be **Friday, July 10**.
-
-Your technical report will be hosted on Github Enterprise. Make sure it includes:
-
-- A README.md (that isn't this file)
-- Jupyter notebook(s) with your analysis and models (renamed to describe your project)
-- At least one successful prediction submission on [DSI-US-12 Regression Challenge](https://www.kaggle.com/c/dsi-us-12-project-2-regression-challenge) --  you should see your name in the "[Leaderboard](https://www.kaggle.com/c/dsi-us-12-project-2-regression-challenge/leaderboard)" tab.
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
-
-**Check with your local instructor for how they would like you to submit your repo for review.**
-
----
-
-## Presentation Structure
-
-- **Must be within time limit established by local instructor.**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider the audience. **Check with your local instructor for direction**.
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
-
-Be sure to rehearse and time your presentation before class.
-
----
-
-## Rubric
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
-
-**Scores will be out of 27 points based on the 9 items in the rubric.** <br>
-*3 points per section*<br>
-
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
-
-### The Data Science Process
-
-**Problem Statement**
-- Is it clear what the student plans to do?
-- What type of model will be developed?
-- How will success be evaluated?
-- Is the scope of the project appropriate?
-- Is it clear who cares about this or why this is important to investigate?
-- Does the student consider the audience and the primary and secondary stakeholders?
-
-**Data Cleaning and EDA**
-- Are missing values imputed appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-- Does the student address whether or not they are likely to be able to answer their problem statement with the provided data given what they've discovered during EDA?
-
-**Preprocessing and Modeling**
-- Are categorical variables one-hot encoded?
-- Does the student investigate or manufacture features with linear relationships to the target?
-- Have the data been scaled appropriately?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student utilize feature selection to remove noisy or multi-collinear features?
-- Does the student test and evaluate a variety of models to identify a production algorithm (**AT MINIMUM:** linear regression, lasso, and ridge)?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
-
-**Evaluation and Conceptual Understanding**
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Is more than one metric utilized in order to better assess performance?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
-
-**Conclusion and Recommendations**
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
-- Does the conclusion answer the original problem statement?
-- Does the student address how findings of this research can be applied for the benefit of stakeholders?
-- Are future steps to move the project forward identified?
-
-### Organization and Professionalism
-
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
-
-**Visualizations**
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
-
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Are `sklearn` methods used appropriately?
-
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
-
-In order to pass the project, students must earn a minimum score of 1 for each category.
-- Earning below a 1 in one or more of the above categories would result in a failing project.
-- While a minimum of 1 in each category is the required threshold for graduation, students should aim to earn at least an average of 1.5 across each category. An average score below 1.5, while it may be passing, means students may want to solicit specific feedback in order to significantly improve the project before showcasing it as part of a portfolio or the job search.
-
-### REMEMBER:
-
-This is a learning environment and you are encouraged to try new things, even if they don't work out as well as you planned! While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
+## Presentation
+![The New Eldorado](photos/Ames,Iowa The New El Dorado.png)
+![My Process](photos/My_process.png)
+![Why Ames](photos/Why_ames.png)
+![neighborhoods](photos/where_to_build.png)
+![Models](photos/what_to_build.png)
