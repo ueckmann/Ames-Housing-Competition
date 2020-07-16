@@ -47,8 +47,8 @@ __There are so many features to consider, I recommend you hire our services righ
 1. The [Kaggle](https://www.kaggle.com/c/dsi-us-12-project-2-regression-challenge?rvi=1) Competition.
 
 ## Presentation
-![The New Eldorado](photos/Ames,Iowa The New El Dorado.png)
-![My Process](photos/My_process.png)
+![The New Eldorado](photos/ames_iowa_new_el_dorado.png)
+![My Process](photos/My_Process.png)
 ![Why Ames](photos/Why_ames.png)
-![neighborhoods](photos/where_to_build.png)
+![neighborhoods](photos/Where_to_build.png)
 ![Models](photos/what_to_build.png)
